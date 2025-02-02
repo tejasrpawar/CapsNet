@@ -19,7 +19,6 @@ The CapsuleNet architecture consists of:
 ├── capsulelayers.py       # Custom capsule layer implementations
 ├── job.sh                 # PBS job submission script
 ├── images/                # Documentation images
-│   └── capsulenet.png    # Architecture diagram
 └── README.md             # This documentation file
 ```
 
@@ -129,3 +128,4 @@ Based on our experiments:
   year={2017}
 }
 ```
+
