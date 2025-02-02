@@ -116,8 +116,6 @@ The model uses:
 ## Performance Metrics
 
 Based on our experiments:
-- Training accuracy: ~99%
-- Validation accuracy: ~99.4%
 - Better handling of spatial relationships
 - Improved robustness to affine transformations
 
