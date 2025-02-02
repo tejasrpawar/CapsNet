@@ -123,8 +123,6 @@ Based on our experiments:
 
 ## Citation
 
-If you use this code, please cite the original paper:
-
 ```bibtex
 @article{sabour2017dynamic,
   title={Dynamic routing between capsules},
