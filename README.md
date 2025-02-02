@@ -2,41 +2,25 @@
 
 This repository contains an implementation of CapsuleNet (Capsule Network) in Python using Keras/TensorFlow, based on the paper ["Dynamic Routing Between Capsules"](https://arxiv.org/abs/1710.09829) by Sara Sabour, Nicholas Frosst, and Geoffrey E. Hinton.
 
-## Architecture
+## Project Structure
 
-![CapsuleNet Architecture](images/capsulenet.png)
-
-The CapsuleNet architecture consists of:
-1. Conv2D layer
-2. PrimaryCaps layer
-3. DigitCaps layer
-4. Decoder network
+```
+.
+├── capsulenet.py           # Single GPU implementation
+├── capsulenet-multi-gpu.py # Multi-GPU implementation
+├── capsulelayers.py       # Custom capsule layer implementations
+├── job.sh                 # PBS job submission script
+└── README.md             # This documentation file
+```
 
 ## Features
 
 - Single GPU implementation (`capsulenet.py`)
 - Multi-GPU support (`capsulenet-multi-gpu.py`)
 - Custom CapsuleLayer implementation (`capsulelayers.py`)
-- Training on MNIST dataset
+- PBS job script for cluster deployment (`job.sh`)
 - Dynamic routing between capsules
 - Reconstruction as regularization method
-
-## Results
-
-### Training vs Validation Performance
-![Training vs Validation Performance](images/training.png)
-
-The graph shows the comparison between CapsNet and traditional CNN performance. CapsNet demonstrates better convergence and higher validation accuracy.
-
-### Reconstruction Results
-![Reconstruction Results](images/reconstructed_digits.png)
-
-The figure above shows original test images (top row) and their reconstructions (bottom row) from the CapsNet's decoder.
-
-### Model Comparison
-![Model Comparison](images/comparison.png)
-
-The comparison shows that CapsNet achieves better performance compared to traditional CNNs, especially in terms of generalization.
 
 ## Requirements
 
@@ -45,23 +29,10 @@ The comparison shows that CapsNet achieves better performance compared to tradit
 - Keras
 - NumPy
 - Matplotlib
-- OpenCV (cv2)
-
-## Project Structure
-
-```
-.
-├── capsulenet.py           # Single GPU implementation
-├── capsulenet-multi-gpu.py # Multi-GPU implementation
-├── capsulelayers.py       # Custom capsule layer implementations
-├── utils.py               # Utility functions
-├── dataset/              # Dataset directory
-└── README.md             # This documentation file
-```
 
 ## Usage
 
-### Single GPU Training
+### Local Training (Single GPU)
 ```bash
 python capsulenet.py
 ```
@@ -69,6 +40,11 @@ python capsulenet.py
 ### Multi-GPU Training
 ```bash
 python capsulenet-multi-gpu.py --gpus 2
+```
+
+### Cluster Deployment
+```bash
+qsub job.sh
 ```
 
 ## Command Line Arguments
@@ -84,6 +60,7 @@ python capsulenet-multi-gpu.py --gpus 2
 - `--save_dir`: Directory to save weights and logs (default: 'result')
 - `--testing`: Test the trained model without training
 - `--weights`: Path to the weights file for testing
+- `--gpus`: Number of GPUs to use (for multi-gpu training)
 
 ## Model Architecture Details
 
@@ -129,21 +106,3 @@ If you use this code, please cite the original paper:
   year={2017}
 }
 ```
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## Support
-
-If you have any questions or need help with the code, please open an issue in the repository.
-
-## Acknowledgments
-
-- Thanks to the authors of the CapsNet paper
-- The TensorFlow and Keras teams
-- The deep learning community for valuable feedback
