@@ -4,8 +4,6 @@ This repository contains an implementation of CapsuleNet (Capsule Network) in Py
 
 ## Architecture
 
-![CapsuleNet Architecture](images/capsulenet.png)
-
 The CapsuleNet architecture consists of:
 1. Conv2D layer
 2. PrimaryCaps layer
@@ -37,14 +35,14 @@ The CapsuleNet architecture consists of:
 ## Results
 
 ### Training vs Validation Performance
-![Training vs Validation Performance](images/training.png)
+![Training vs Validation Performance](images/CNN.png)
 
-The graph shows the comparison between CapsNet and traditional CNN performance. CapsNet demonstrates better convergence and higher validation accuracy.
+The graph shows the results of the CNN model.
 
-### Reconstruction Results
-![Reconstruction Results](images/reconstructed_digits.png)
+### CapsNET Results
+![CapsNET Results](images/CAPSTRAIN.png)
 
-The figure above shows original test images (top row) and their reconstructions (bottom row) from the CapsNet's decoder.
+The figure above shows results of the CapsNet model.
 
 ### Model Comparison
 ![Model Comparison](images/comparison.png)
