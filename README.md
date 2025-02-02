@@ -2,6 +2,16 @@
 
 This repository contains an implementation of CapsuleNet (Capsule Network) in Python using Keras/TensorFlow, based on the paper ["Dynamic Routing Between Capsules"](https://arxiv.org/abs/1710.09829) by Sara Sabour, Nicholas Frosst, and Geoffrey E. Hinton.
 
+## Architecture
+
+![CapsuleNet Architecture](images/capsulenet.png)
+
+The CapsuleNet architecture consists of:
+1. Conv2D layer
+2. PrimaryCaps layer
+3. DigitCaps layer
+4. Decoder network
+
 ## Project Structure
 
 ```
@@ -10,6 +20,8 @@ This repository contains an implementation of CapsuleNet (Capsule Network) in Py
 ├── capsulenet-multi-gpu.py # Multi-GPU implementation
 ├── capsulelayers.py       # Custom capsule layer implementations
 ├── job.sh                 # PBS job submission script
+├── images/                # Documentation images
+│   └── capsulenet.png    # Architecture diagram
 └── README.md             # This documentation file
 ```
 
@@ -21,6 +33,23 @@ This repository contains an implementation of CapsuleNet (Capsule Network) in Py
 - PBS job script for cluster deployment (`job.sh`)
 - Dynamic routing between capsules
 - Reconstruction as regularization method
+
+## Results
+
+### Training vs Validation Performance
+![Training vs Validation Performance](images/training.png)
+
+The graph shows the comparison between CapsNet and traditional CNN performance. CapsNet demonstrates better convergence and higher validation accuracy.
+
+### Reconstruction Results
+![Reconstruction Results](images/reconstructed_digits.png)
+
+The figure above shows original test images (top row) and their reconstructions (bottom row) from the CapsNet's decoder.
+
+### Model Comparison
+![Model Comparison](images/comparison.png)
+
+The comparison shows that CapsNet achieves better performance compared to traditional CNNs, especially in terms of generalization.
 
 ## Requirements
 
